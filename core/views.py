@@ -18,21 +18,21 @@ class PlaceDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Place.objects.all()
 
 class CategoryListView(generics.CreateAPIView):
-    permission_classes = [permissions.PlaceOwnerOrReadOnly]
+    permission_classes = [permissions.IsOwnerOrReadOnly]
     serializer_class = serializers.CategorySerializer
 
 
 class CategoryDetailView(generics.UpdateAPIView, generics.DestroyAPIView):
-    permission_classes = [permissions.PlaceOwnerOrReadOnly]
+    permission_classes = [permissions.IsOwnerOrReadOnly]
     serializer_class = serializers.CategorySerializer
     queryset = models.Category.objects.all()
 
 class MenuItemListView(generics.CreateAPIView):
-    permission_classes = [permissions.PlaceOwnerOrReadOnly]
+    permission_classes = [permissions.IsOwnerOrReadOnly]
     serializer_class = serializers.MenuItemSerializer
 
 
 class MenuItemDetailView(generics.UpdateAPIView, generics.DestroyAPIView):
-    permission_classes = [permissions.PlaceOwnerOrReadOnly]
+    permission_classes = [permissions.IsOwnerOrReadOnly]
     serializer_class = serializers.MenuItemSerializer
     queryset = models.MenuItem.objects.all()

@@ -10,4 +10,9 @@ urlpatterns = [
 
     path('menu_items/', MenuItemListView.as_view()),
     path('menu_items/<pk>', MenuItemDetailView.as_view()),
+
+    path('create_payment_intent/', create_payment_intent),
+
+    path('orders/', OrderListView.as_view()),
+    path('orders/<pk>', OrderDetailView.as_view()),
 ]
